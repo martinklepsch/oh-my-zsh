@@ -9,11 +9,8 @@ alias gup='git fetch && git rebase'
 compdef _git gup=git-fetch
 alias gp='git push'
 compdef _git gp=git-push
-alias gd='git diff | mate'
-# WTF is mate??
-compdef _git gd=git-diff
-gdv() { git diff -w "$@" | view - }
-compdef gdv=git
+gdv() { git-diff -w "$@" | view - }
+compdef _git gdv=git-diff
 alias gc='git commit -v'
 compdef _git gc=git-commit
 alias gca='git commit -v -a'
