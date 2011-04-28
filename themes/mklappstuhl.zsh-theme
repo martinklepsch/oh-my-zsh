@@ -5,10 +5,10 @@ function prompt_char {
 }
 
 function hostbat {
-	bat=$(acpi | awk '{sub(/%/, ""); print $NF}')
+	bat=$(acpi | awk '{gsub(/[%,]/, "", $4); print $4}')
 	if   (( $bat >= 90 )); then
 		echo "%{$fg[green]%}$(hostname)%{$reset_color%}"
-	elif (( bat >= 30 )) ; then
+	elif (( $bat >= 30 )) ; then
 		echo "%{$fg[yellow]%}$(hostname)%{$reset_color%}"
 	else
 		echo "%{$fg[red]%}$(hostname)%{$reset_color%}"
