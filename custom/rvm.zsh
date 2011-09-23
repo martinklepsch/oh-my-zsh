@@ -1,2 +1,1 @@
-# This loads RVM into a shell session.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "/home/martin/.rvm/scripts/rvm" ]] && source "/home/martin/.rvm/scripts/rvm"
