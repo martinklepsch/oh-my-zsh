@@ -4,16 +4,16 @@ function prompt_char {
 	echo '○'
 }
 
-function hostbat {
-	bat=$(acpi | awk '{gsub(/[%,]/, "", $4); print $4}')
-	if   (( $bat >= 90 )); then
-		echo "%{$fg[green]%}$(hostname)%{$reset_color%}"
-	elif (( $bat >= 30 )) ; then
-		echo "%{$fg[yellow]%}$(hostname)%{$reset_color%}"
-	else
-		echo "%{$fg[red]%}$(hostname)%{$reset_color%}"
-	fi
-}
+#function hostbat {
+#	bat=$(acpi | awk '{gsub(/[%,]/, "", $4); print $4}')
+#	if   (( $bat >= 90 )); then
+#		echo "%{$fg[green]%}$(hostname)%{$reset_color%}"
+#	elif (( $bat >= 30 )) ; then
+#		echo "%{$fg[yellow]%}$(hostname)%{$reset_color%}"
+#	else
+#		echo "%{$fg[red]%}$(hostname)%{$reset_color%}"
+#	fi
+#}
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ♆ %{$fg[magenta]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -26,5 +26,5 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ◑%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ◕%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%} ⚡%{$reset_color%}"
 
-PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at $(hostbat) in %{$fg[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)$(git_prompt_status)
+PROMPT='%{$fg[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)$(git_prompt_status)
 $(prompt_char) '
